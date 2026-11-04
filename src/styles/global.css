@@ -1,0 +1,51 @@
+/*
+  Fonte Diplomat (licença comercial): coloque o arquivo em public/fonts/
+  e descomente o bloco abaixo caso queira usar o título como texto real
+  em vez do SVG.
+
+  @font-face {
+    font-family: "Diplomat";
+    src: url("/fonts/Diplomat.woff2") format("woff2");
+    font-display: swap;
+  }
+*/
+
+:root {
+  --creme: #f3f5e7;
+  --preto: #0b0b0b;
+  --font-titulo: "Diplomat", "Snell Roundhand", cursive;
+  --font-texto: "Cormorant Garamond", Georgia, serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  background: var(--preto);
+  color: var(--creme);
+  -webkit-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+h1 {
+  margin: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}

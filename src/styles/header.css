@@ -1,0 +1,25 @@
+.header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  /* respeita o notch / barra de status do celular */
+  padding-top: calc(env(safe-area-inset-top, 0px) + 22px);
+}
+
+.header__monogram {
+  height: 40px;
+  width: auto;
+}
+
+@media (min-width: 900px) {
+  .header {
+    padding-top: 32px;
+  }
+  .header__monogram {
+    height: 48px;
+  }
+}

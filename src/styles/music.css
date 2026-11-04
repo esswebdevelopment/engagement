@@ -1,0 +1,31 @@
+.music-toggle {
+  position: absolute;
+  z-index: 3;
+  top: calc(env(safe-area-inset-top, 0px) + 22px);
+  right: 20px;
+  display: grid;
+  place-items: center;
+  width: 44px; /* área de toque confortável no celular */
+  height: 44px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  color: var(--creme);
+  cursor: pointer;
+  /* escondido até a Home ser revelada (regras em home.css) */
+  opacity: 0;
+  pointer-events: none;
+}
+
+.music-toggle:focus-visible {
+  outline: 1px solid var(--creme);
+  outline-offset: 2px;
+}
+
+@media (min-width: 900px) {
+  .music-toggle {
+    top: 32px;
+    right: 32px;
+  }
+}
