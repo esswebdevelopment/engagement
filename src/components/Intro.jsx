@@ -12,7 +12,7 @@ export default function Intro({ open, onEnter }) {
     >
       <span className="intro__content">
         <img className="intro__monogram" src={monograma} alt="" width="40" height="43" />
-        <span className="intro__text">Toque para entrar</span>
+        <span className="intro__text">— Toque para entrar</span>
       </span>
     </button>
   );

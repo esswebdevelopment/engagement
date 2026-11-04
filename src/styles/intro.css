@@ -36,15 +36,15 @@
 }
 
 .intro__monogram {
-  height: 84px;
+  height: 40px;
   width: auto;
 }
 
 .intro__text {
   font-family: var(--font-texto);
   font-style: normal;
-  font-size: 1.25rem;
-  letter-spacing: 0.09em;
+  font-size: 1rem;
+  letter-spacing: 0.02em;
   /* respiração lenta: convida ao toque */
   animation: respirar 3.2s ease-in-out infinite;
 }
