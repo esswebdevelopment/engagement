@@ -36,7 +36,7 @@
 }
 
 .intro__monogram {
-  height: 40px;
+  height: 44px;
   width: auto;
 }
 
@@ -44,7 +44,7 @@
   font-family: var(--font-texto);
   font-style: normal;
   font-size: 1rem;
-  letter-spacing: 0.02em;
+  letter-spacing: 0.05em;
   /* respiração lenta: convida ao toque */
   animation: respirar 3.2s ease-in-out infinite;
 }
