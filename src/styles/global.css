@@ -13,8 +13,11 @@
 :root {
   --creme: #f3f5e7;
   --preto: #0b0b0b;
-  --font-titulo: "Diplomat", "Snell Roundhand", cursive;
+  --vinho: #580000;
+  --branco: #ffffff;
+  --font-titulo: "Diplomat", "Pinyon Script", "Snell Roundhand", cursive;
   --font-texto: "Garamond", Georgia, serif;
+  --font-elegante: "Cormorant Garamond", Garamond, Georgia, serif;
 }
 
 *,

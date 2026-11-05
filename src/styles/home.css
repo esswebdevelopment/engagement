@@ -1,6 +1,6 @@
 .hero {
-  position: relative;
-  /* 100svh = altura visível real no celular (ignora a barra do navegador) */
+  position: sticky; /* fica presa no topo enquanto a próxima seção sobe */
+  top: 0;
   height: 100vh;
   height: 100svh;
   min-height: 520px;
