@@ -1,14 +1,10 @@
 import monograma from "../assets/monograma.svg";
 import evento from "../data/evento.js";
 import useReveal from "../hooks/useReveal.js";
-import useScrolled from "../hooks/useScrolled.js";
 import "../styles/evento.css";
 
-export default function Evento({ entered }) {
+export default function Evento() {
   const [ref, visivel] = useReveal(0.3);
-  const rolou = useScrolled();
-  // a renda só aparece depois de entrar no site E de começar a rolar
-  const mostrarRenda = entered && rolou;
 
   const mapaUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
     evento.mapaBusca
@@ -20,11 +16,6 @@ export default function Evento({ entered }) {
       className={`evento ${visivel ? "evento--visible" : ""}`}
       aria-labelledby="evento-title"
     >
-      <div
-        className={`evento__renda ${mostrarRenda ? "evento__renda--visible" : ""}`}
-        aria-hidden="true"
-      />
-
       <div className="evento__inner">
         <h2 id="evento-title" className="evento__title">
           {evento.titulo}
