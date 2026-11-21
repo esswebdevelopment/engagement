@@ -7,156 +7,61 @@
   /* lvh = altura máxima do celular, assim a seção nunca deixa uma fresta da hero */
   min-height: 100vh;
   min-height: 100lvh;
-  padding: 88px 28px calc(env(safe-area-inset-bottom, 0px) + 64px);
+  padding: 64px 0 calc(env(safe-area-inset-bottom, 0px) + 64px);
   background: var(--vinho);
   color: var(--branco);
-  text-align: center;
 }
 
-/* fita de renda na divisa: metade sobre a capa, metade sobre o bordô.
-   Fica dentro da seção, então sobe junto com ela. */
-.evento__renda {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: clamp(54px, 8vw, 96px);
-  transform: translateY(-50%);
-  background: url("../assets/renda.png") center / auto 100% repeat-x;
-  pointer-events: none;
-  /* escondida até entrar no site e começar a rolar */
-  opacity: 0;
-  transition: opacity 0.8s ease;
-}
-
-.evento__renda--visible {
-  opacity: 1;
-}
-
-/* único movimento da seção: o conteúdo aparece depois que a tela sobe */
-.evento__inner {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
-  max-width: 34rem;
+/* o conteúdo aparece depois que a tela sobe */
+.evento__card {
+  position: relative;
+  width: min(90vw, 440px);
   opacity: 0;
   transition: opacity 1.6s ease 0.2s;
 }
 
-.evento--visible .evento__inner {
+.evento--visible .evento__card {
   opacity: 1;
 }
 
-.evento__title {
-  margin: 0 0 32px;
-  font-family: var(--font-titulo);
-  font-weight: 400;
-  font-size: clamp(3.6rem, 19vw, 5.5rem);
-  line-height: 1.05;
-}
-
-.evento__text {
-  margin: 0;
-  font-family: var(--font-elegante);
-  font-style: italic;
-  font-size: clamp(1.25rem, 5vw, 1.5rem);
-  line-height: 1.6;
-  text-wrap: balance;
-}
-
-.evento__names {
-  margin: 36px 0 0;
-  font-family: var(--font-titulo);
-  font-size: 1.6rem;
-  opacity: 0.65;
-}
-
-.evento__venue {
-  margin: 40px 0 0;
-  font-family: var(--font-elegante);
-  font-size: 0.85rem;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  text-wrap: balance;
-}
-
 .evento__info {
-  margin: 28px 0 0;
-  font-family: var(--font-elegante);
-  font-size: 1.35rem;
-  line-height: 1.5;
+  display: block;
+  width: 100%;
+  height: auto;
 }
 
-.evento__info p {
-  margin: 0;
-}
-
-.evento__address {
-  margin-top: 6px;
-  font-size: 1.1rem;
-  opacity: 0.8;
-}
-
-.evento__map {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 48px; /* área de toque confortável */
-  margin-top: 32px;
-  padding: 0 28px;
-  border: 1px solid var(--branco);
-  color: var(--branco);
-  font-family: var(--font-elegante);
-  font-size: 1.05rem;
-  letter-spacing: 0.06em;
-  text-decoration: none;
+/* área de toque exatamente sobre cada botão da imagem
+   (posições em % do tamanho do SVG, então acompanham qualquer tela) */
+.evento__link {
+  position: absolute;
+  left: 28.24%;
+  width: 43.98%;
+  height: 15.01%;
+  display: block;
   -webkit-tap-highlight-color: transparent;
-  transition: background 0.25s ease, color 0.25s ease;
+  transition: background 0.25s ease;
 }
 
-.evento__map:hover,
-.evento__map:active {
-  background: var(--branco);
-  color: var(--vinho);
+.evento__link--maps {
+  top: 57.49%;
 }
 
-.evento__map:focus-visible {
+.evento__link--menu {
+  top: 84.61%;
+}
+
+.evento__link:hover,
+.evento__link:active {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.evento__link:focus-visible {
   outline: 1px solid var(--branco);
   outline-offset: 4px;
 }
 
-.evento__monogram {
-  height: 44px;
-  width: auto;
-  margin-top: 56px;
-  /* o SVG é creme; aqui deixamos branco, igual ao restante */
-  filter: brightness(0) invert(1);
-}
-
 @media (min-width: 900px) {
-  .evento {
-    padding: 120px 48px 96px;
-  }
-
-  .evento__inner {
-    max-width: 42rem;
-  }
-
-  .evento__title {
-    font-size: clamp(5.5rem, 8vw, 8rem);
-    margin-bottom: 40px;
-  }
-
-  .evento__text {
-    font-size: 1.6rem;
-  }
-
-  .evento__info {
-    font-size: 1.5rem;
-  }
-
-  .evento__monogram {
-    height: 52px;
+  .evento__card {
+    width: 520px;
   }
 }
