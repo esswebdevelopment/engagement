@@ -22,32 +22,25 @@
   transition: filter 3s ease, transform 3s ease;
 }
 
-/* escurece embaixo (onde está o texto) e deixa o casal mais limpo em cima */
+/* escurece topo e base para o monograma e o título ficarem legíveis */
 .hero__shade {
   position: absolute;
   inset: 0;
   background: linear-gradient(to bottom,
       rgba(0, 0, 0, 0.45) 0%,
       rgba(0, 0, 0, 0) 22%,
-      rgba(0, 0, 0, 0) 35%,
-      rgba(0, 0, 0, 0.78) 75%,
-      rgba(0, 0, 0, 0.85) 100%);
+      rgba(0, 0, 0, 0) 48%,
+      rgba(0, 0, 0, 0.72) 100%);
 }
 
-/* letreiro: encostado à esquerda e no final da tela (celular) */
 .hero__title {
   position: absolute;
-  inset: 0;
+  left: 50%;
+  bottom: calc(env(safe-area-inset-bottom, 0px) + 7svh);
   z-index: 2;
+  width: min(88vw, 720px);
   margin: 0;
-  display: grid;
-  align-items: end;     /* final da tela */
-  justify-items: start; /* esquerda */
-  padding: 0 clamp(20px, 4vw, 56px); /* respiro à esquerda (e à direita no celular) */
-  /* respiro embaixo; o safe-area cobre a barrinha do iPhone */
-  padding-bottom: calc(env(safe-area-inset-bottom, 0px) + 28px);
-  /* a camada cobre a tela toda; não pode bloquear o toque nos botões */
-  pointer-events: none;
+  transform: translateX(-50%);
   /* escondido até a Home ser revelada */
   opacity: 0;
   /* aparece depois do desfoque sair */
@@ -56,29 +49,26 @@
 
 .hero__title img {
   display: block;
-  width: min(80%, 400px, calc((100svh - 160px) * 1.014));
+  width: 100%;
   height: auto;
 }
 
-/* Desktop: letreiro centralizado na vertical; escurece mais à esquerda
-   (onde está o texto) e deixa o casal visível à direita */
+/* Desktop: título grande, centralizado na tela (como no protótipo) */
 @media (min-width: 900px) {
   .hero__title {
-    align-items: center;
-    padding-bottom: 0;
+    left: 50%;
+    top: 54%;
+    bottom: auto;
+    width: min(78vw, 1200px);
+    transform: translate(-50%, -50%);
   }
 
   .hero__shade {
-    background:
-      linear-gradient(to right,
-        rgba(0, 0, 0, 0.7) 0%,
-        rgba(0, 0, 0, 0.45) 45%,
-        rgba(0, 0, 0, 0) 80%),
-      linear-gradient(to bottom,
+    background: linear-gradient(to bottom,
         rgba(0, 0, 0, 0.45) 0%,
-        rgba(0, 0, 0, 0) 22%,
-        rgba(0, 0, 0, 0) 78%,
-        rgba(0, 0, 0, 0.6) 100%);
+        rgba(0, 0, 0, 0.25) 30%,
+        rgba(0, 0, 0, 0.35) 60%,
+        rgba(0, 0, 0, 0.72) 100%);
   }
 }
 
