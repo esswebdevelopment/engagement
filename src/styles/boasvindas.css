@@ -6,7 +6,7 @@
   padding: 72px 16px;
   /* mesmo branco do fundo da moldura: ela se funde com a seção */
   background: var(--branco);
-  color: black;
+  color: var(--preto);
   /* "u" = quanto vale 1px do desenho original da moldura na tela.
      Aumente para cantos maiores, diminua para cantos menores. */
   --u: 0.8px;
@@ -15,7 +15,7 @@
 /*
   Moldura em 9 partes (border-image):
   - os 4 cantos ornamentados mantêm o tamanho e o desenho;
-  - as laterais (linhas lisas) esticam, então a moldura cresce com o texto.
+  - as laterais (linhas lisas) esticam, então a moldura se ajusta ao conteúdo.
   O desenho é vetorial (SVG): fica nítido em qualquer tela.
   Os números do slice são medidas do desenho original (236 x 333).
 */
@@ -30,7 +30,6 @@
   border-image-repeat: stretch;
   /* espaço livre para o texto, longe dos ornamentos */
   padding: calc(64 * var(--u)) calc(52 * var(--u));
-  text-align: center;
   opacity: 0;
   transition: opacity 1.6s ease 0.2s;
 }
@@ -39,32 +38,14 @@
   opacity: 1;
 }
 
-.boasvindas__titulo {
-  margin: 0 0 28px;
-  font-family: var(--font-texto);
-  font-weight: 400;
-  font-size: clamp(2.5rem, 11vw, 3.3rem);
-  line-height: 1.1;
-  text-wrap: balance;
-}
-
+/* texto (SVG): ocupa a largura livre dentro da moldura.
+   Para aumentar ou diminuir o texto, mude o max-width. */
 .boasvindas__texto {
-  margin: 0 0 1.1em;
-  font-family: var(--font-texto);
-  font-weight: 500;
-  font-size: clamp(1.15rem, 4.8vw, 1.3rem); /* grande, para ler com facilidade */
-  line-height: 1.6;
-  text-wrap: pretty;
-}
-
-.boasvindas__fecho {
-  margin: 1.8em 0 0;
-  font-family: var(--font-texto);
-  font-weight: 500;
-  font-style: italic;
-  font-size: clamp(1.2rem, 5vw, 1.4rem);
-  line-height: 1.5;
-  text-wrap: balance;
+  display: block;
+  width: 60%;
+  max-width: 320px;
+  height: auto;
+  margin: 0 auto;
 }
 
 /* celulares bem estreitos: cantos um pouco menores */
@@ -81,10 +62,10 @@
   }
 
   .boasvindas__moldura {
-    max-width: 680px;
+    max-width: 520px;
   }
 
   .boasvindas__texto {
-    font-size: 1.4rem;
+    max-width: 380px;
   }
 }
