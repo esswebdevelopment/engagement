@@ -3,6 +3,9 @@
   z-index: 1;
   display: flex;
   justify-content: center;
+  align-items: center; /* moldura no meio da seção */
+  min-height: 100vh;
+  min-height: 100svh; /* a seção branca ocupa a tela toda */
   padding: 72px 16px;
   /* mesmo branco do fundo da moldura: ela se funde com a seção */
   background: var(--branco);
@@ -39,7 +42,7 @@
 }
 
 /* texto (SVG): ocupa a largura livre dentro da moldura.
-   Para aumentar ou diminuir o texto, mude o max-width. */
+   Para aumentar ou diminuir o texto, mude o width / max-width. */
 .boasvindas__texto {
   display: block;
   width: 60%;
